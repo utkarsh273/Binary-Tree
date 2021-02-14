@@ -2,7 +2,7 @@
 #include "declerations.h"
 void** CreateTree(void **arg)
 {
-    Node *ptr;
+    
     Node **tree;
     printf("%s:Begin\n",__FILE__);
     tree=(void**)arg;
