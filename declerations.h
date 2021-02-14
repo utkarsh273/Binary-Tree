@@ -5,12 +5,12 @@
 #define DEBUG
 #endif
 
-typedef struct
+typedef struct node
 {
     int index;
-    Node *parent;
-    Node *lchild;
-    Node *rchild;
+    struct node  *parent;
+    struct node *lchild;
+    struct node *rchild;
     int status;
     int value;
 }Node;

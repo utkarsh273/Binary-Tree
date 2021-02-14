@@ -5,7 +5,7 @@ void** CreateTree(void **arg)
     
     Node **tree;
     printf("%s:Begin\n",__FILE__);
-    tree=(void**)arg;
+    tree=(Node**)arg;
     tree=(Node**)malloc(sizeof(Node*));
     if(!tree)
     {

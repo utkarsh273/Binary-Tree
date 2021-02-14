@@ -8,7 +8,7 @@ void** Mainmenu(void **arg)
     printf("%s:________MainMenu_______\n",__func__);
     if(tree==NULL)
     {
-        printf("1.CreateTree");
+        printf("1.CreateTreea\n");
     }
     else
     {
@@ -18,7 +18,7 @@ void** Mainmenu(void **arg)
         printf("5.DisplayTree\n");
         printf("6.DistroyTree\n");
     }
-    printf("0.Exit"); 
+    printf("0.Exit\n"); 
     printf("Enter your choice\n");
     scanf("%d",&i);
     if(i==0)

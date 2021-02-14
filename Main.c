@@ -7,7 +7,7 @@ int main()
     printf("%s:Begin\n"__FILE__);
 #endif
     Tree=NULL;
-    init();
+    Init();
     while(1)
     {
         Tree=(Node**)(*fptr[1]((void**)Tree));
