@@ -4,11 +4,10 @@ void** Mainmenu(void **arg)
 {
     int i;
     Node **tree;
-    tree=(Node**)arg;
     printf("%s:________MainMenu_______\n",__func__);
-    if(tree==NULL)
+    if(!arg)
     {
-        printf("1.CreateTreea\n");
+        printf("1.CreateTree\n");
     }
     else
     {

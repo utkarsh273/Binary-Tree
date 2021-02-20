@@ -3,12 +3,19 @@
 void** InsertNode(void **arg)
 {
     Node **tree;
-    Node *cur;
-    tree=(Node**)arg;
+    Node *curr;
+    
     printf("%s:Begin\n",__FILE__);
-    while(*tree!=NULL)
+    tree=(Node**)arg;
+    if(!tree)
     {
-        cur=*tree;
+        printf("Tree not found\n");
+        return arg;
+    }
+    curr=*(tree);
+    while(curr!=NULL)
+    {
+        curr= curr+1;
     }
     tree=(Node**)realloc(tree,sizeof(Node*)*3);
     if(!tree)
@@ -16,6 +23,7 @@ void** InsertNode(void **arg)
         perror("realloc");
         (*fptr[0])((void**)&status[1]);
     }
+    curr=curr+1;
     *(tree+1)=*(Node**)(*fptr[7])(arg);//allocateNode
     *(tree+2)=NULL;
     printf("%s:End\n",__FILE__);

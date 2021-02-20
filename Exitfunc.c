@@ -5,7 +5,7 @@ void** ExitFunc(void **arg)
     char *stat;
     printf("%s:Begin\n",__FILE__);
     stat=(char*)arg;
-    if(strncmp(stat,"Sucess",7)==0)
+    if(strncmp(stat,"Success",7)==0)
     {
         exit(EXIT_SUCCESS);
     }
