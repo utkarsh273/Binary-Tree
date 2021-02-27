@@ -8,7 +8,7 @@
 typedef struct node
 {
     int index;
-    struct node  *parent;
+    struct node *parent;
     struct node *lchild;
     struct node *rchild;
     int status;
