@@ -24,7 +24,7 @@ void** InsertNode(void **arg)
     }
     (*fptr[7])(arg);//allocateNode
     *(tree+count)=*tree;
-    printf("%s:value: %d\n",__func__,*(tree+count)->value);
+    printf("%s:value: %d\n",__func__,(*tree+count)->value);
     printf("%s:End\n",__FILE__);
     return arg;
 }
