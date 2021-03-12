@@ -1,6 +1,7 @@
 #include "headers.h"
 #include "declerations.h"
 int val;
+int count;
 char **status;
 int Init()
 {
@@ -12,6 +13,8 @@ int Init()
     }
     status[0]="Success";
     status[1]="Failure";
+    count=0;
+    allocsize=0;
     fptr[0]=ExitFunc;
     fptr[1]=Mainmenu;
     fptr[2]=CreateTree;
