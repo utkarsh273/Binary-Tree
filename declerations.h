@@ -1,5 +1,5 @@
 #ifndef NOF
-#define NOF 9
+#define NOF 10
 #endif
 #ifndef DEBUG
 #define DEBUG
@@ -27,5 +27,5 @@ void** DisplayTree(void **arg);
 void** DistroyTree(void **arg);
 void** ExitFunc(void **arg);
 void** allocateNode(void **arg);
-
+void** FirstNode(void **arg);
 void** (*fptr[NOF])(void**);

@@ -10,7 +10,7 @@ int main()
     Init();
     while(1)
     {
-        Tree=(Node**)(*fptr[1]((void**)Tree));
+        Tree=(Node**)(*fptr[1])((void**)Tree);
     }
 #ifdef DEBUG
     printf("%s:End\n"__FILE__);

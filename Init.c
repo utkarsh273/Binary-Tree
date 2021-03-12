@@ -20,5 +20,6 @@ int Init()
     fptr[5]=TraverseTree;
     fptr[6]=DisplayTree;
     fptr[7]=allocateNode;
+    fptr[8]=FirstNode;
     return 0;
 }
