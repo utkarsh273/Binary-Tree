@@ -16,7 +16,7 @@ typedef struct node
 }Node;
 extern int val;
 extern char **status;
-extern Node *NewNode;
+extern Node **NewNode;
 extern int count,allocsize;
 int Init();
 void** Mainmenu(void **arg);

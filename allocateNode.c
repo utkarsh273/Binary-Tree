@@ -1,21 +1,21 @@
 #include "headers.h"
 #include "declerations.h"
-Node *NewNode;
+Node **NewNode;
 void** allocateNode(void **arg)
 {
     printf("%s:Begin\n",__FILE__);
-    NewNode=(Node*)malloc(sizeof(Node));
+    NewNode=(Node**)arg;
     if(!NewNode)
     {
         perror("malloc");
         (*fptr[0])((void**)&status[1]);
     }
-    NewNode->index=0;
-    NewNode->parent=NULL;
-    NewNode->lchild=NULL;
-    NewNode->rchild=NULL;
-    NewNode->status=0;
-    NewNode->value=val++;
+    (**NewNode).index=0;
+    (**NewNode).parent=NULL;
+    (**NewNode).lchild=NULL;
+    (**NewNode).rchild=NULL;
+    (**NewNode).status=0;
+    (**NewNode).value=val++;
     printf("%s:End\n",__FILE__);
-    return (void**)&NewNode;
+    return (void**)NewNode;
 }

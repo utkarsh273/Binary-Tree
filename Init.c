@@ -2,6 +2,7 @@
 #include "declerations.h"
 int val;
 int count;
+int allocsize;
 char **status;
 int Init()
 {
