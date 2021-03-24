@@ -24,7 +24,23 @@ void** InsertNode(void **arg)
     }
     (*fptr[7])(arg);//allocateNode
     *(tree+count)=*tree;
-    printf("%s:value: %d\n",__func__,(*tree+count)->value);
+    printf("%s:value: %d\n",__func__,(*(tree+count))->value);
+    if(!*(tree+2*count) && (*(tree+count))->lchild==NULL)
+    {
+        (*fptr[7])(arg);
+        *(tree+2*count)=*tree;
+        (*(tree+count))->lchild=*(tree+2*count);
+        printf("Count:%d\n",count);
+        printf("%s:value of left child: %d\n",__func__,(*(tree+2*count))->value);
+    }
+    if(!*(tree+(2*count+1)) && (*(tree+count))->rchild==NULL)
+    {
+        (*fptr[7])(arg);
+        *(tree+(2*count+1))=*tree;
+        (*(tree+count))->rchild=*(tree+(2*count+1));
+        printf("Count:%d\n",count);
+        printf("%s:value at right child: %d\n",__func__,(*(tree+(2*count+1)))->value);
+    }
     printf("%s:End\n",__FILE__);
     return arg;
 }
