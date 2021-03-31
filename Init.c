@@ -1,7 +1,7 @@
 #include "headers.h"
 #include "declerations.h"
 int val;
-int count;
+int count,n,idx;
 int allocsize;
 char **status;
 int Init()
@@ -14,7 +14,8 @@ int Init()
     }
     status[0]="Success";
     status[1]="Failure";
-    count=0;
+    count=1;
+    n=idx=1;
     allocsize=0;
     fptr[0]=ExitFunc;
     fptr[1]=Mainmenu;

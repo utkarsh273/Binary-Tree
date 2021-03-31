@@ -11,38 +11,55 @@ void** InsertNode(void **arg)
         printf("Tree not found\n");
         return arg;
     }
-    count++;
-    if(count>=allocsize)
+    if(idx>=allocsize)
     {
-        tree=(Node**)realloc(tree,sizeof(Node*)*((2*count)+2));
+        tree=(Node**)realloc(tree,sizeof(Node*)*((2*idx)+2));
         if(!tree)
         {
             perror("realloc");
             (*fptr[0])((void**)&status[1]);
         }
-        allocsize=((2*count)+2);
+        allocsize=((2*idx)+2);
     }
-    (*fptr[7])(arg);//allocateNode
-    *(tree+count)=*tree;
-    printf("%s:value: %d\n",__func__,(*(tree+count))->value);
-    if(!*(tree+2*count) && (*(tree+count))->lchild==NULL)
+    if(n==1)
     {
-        (*fptr[7])(arg);
-        *(tree+2*count)=*tree;
-        (*(tree+count))->lchild=*(tree+2*count);
+        (*fptr[7])((void**)tree);//allocateNode
+        *(tree+count)=*tree;
+        printf("%s:value: %d\n",__func__,(*(tree+count))->value);
         printf("Count:%d\n",count);
-        printf("%s:value of left child: %d\n",__func__,(*(tree+2*count))->value);
+        n++;
+        idx++;
     }
-    if(!*(tree+(2*count+1)) && (*(tree+count))->rchild==NULL)
+    else
     {
-        (*fptr[7])(arg);
-        *(tree+(2*count+1))=*tree;
-        (*(tree+count))->rchild=*(tree+(2*count+1));
-        printf("Count:%d\n",count);
-        printf("%s:value at right child: %d\n",__func__,(*(tree+(2*count+1)))->value);
+        //printf("%s:address of left child: %p\n",__func__,(*(tree+2*count)));
+        //if(!(*(tree+2*count))&& (*(tree+count))->lchild==NULL)
+        if((*(tree+count))->lchild==NULL)
+        {
+            (*fptr[7])((void**)tree);
+            *(tree+2*count)=*tree;
+            (*(tree+count))->lchild=*(tree+2*count);
+            (*(tree+2*count))->parent=*(tree+count);
+            printf("Count:%d\n",count);
+            printf("%s:value at left child of %d : %d\n",__func__,(*(tree+count))->value,(*(tree+2*count))->value);
+            idx++;
+        }
+        //else if(!(*(tree+(2*count+1))) && (*(tree+count))->rchild==NULL)
+        else if((*(tree+count))->rchild==NULL)
+        {
+            (*fptr[7])((void**)tree);
+            *(tree+(2*count+1))=*tree;
+            (*(tree+count))->rchild=*(tree+(2*count+1));
+            (*(tree+(2*count+1)))->parent=*(tree+count);
+            printf("%s:value at right child of %d : %d\n",__func__,(*(tree+count))->value,(*(tree+(2*count+1)))->value);
+            count++;
+            idx++;
+        }
+        //printf("Count inside else :%d\n",count);
     }
+    //printf("Count at end :%d\n",count);
     printf("%s:End\n",__FILE__);
-    return arg;
+    return (void**)tree;
 }
 /* curr=*(tree);
     while(curr!=NULL)

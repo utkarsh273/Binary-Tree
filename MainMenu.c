@@ -4,6 +4,7 @@ void** Mainmenu(void **arg)
 {
     int i;
     Node **tree;
+    tree=(Node**)arg;
     printf("%s:________MainMenu_______\n",__func__);
    if(!arg)
     {
@@ -26,7 +27,7 @@ void** Mainmenu(void **arg)
     }
     else if(i>=1 && i<=6)
     {
-        arg=(*fptr[i+1])(arg);
+        tree=(Node**)(*fptr[i+1])((void**)tree);
     }
-    return arg;
+    return (void**)tree;
 }
