@@ -1,5 +1,5 @@
 #ifndef NOF
-#define NOF 10
+#define NOF 12
 #endif
 #ifndef DEBUG
 #define DEBUG
@@ -17,6 +17,7 @@ typedef struct node
 extern int val;
 extern char **status;
 extern Node **NewNode;
+extern Node *Tree;
 extern int count,allocsize,n,idx;
 int Init();
 void** Mainmenu(void **arg);
@@ -25,8 +26,11 @@ void** InsertNode(void **arg);
 void** DeleteNode(void **arg);
 void** TraverseTree(void **arg);
 void** DisplayTree(void **arg);
-void** DistroyTree(void **arg);
+void** DestroyTree(void **arg);
+void** Preorder(void** arg);
+void** Postorder(void** arg);
+void** Inorder(void** arg);
 void** ExitFunc(void **arg);
 void** allocateNode(void **arg);
-void** FirstNode(void **arg);
+void GetRootNode();
 void** (*fptr[NOF])(void**);

@@ -9,6 +9,12 @@ void** DisplayTree(void **arg)
     i=1;   
     while(i<idx)
     {
+        
+        if(i>10)
+        {
+            printf(" %d  ",i);
+            i++;
+        }
         printf("   %d  ",i);
         i++;
     }
@@ -25,11 +31,11 @@ void** DisplayTree(void **arg)
     while(i<idx)
     {
         //printf("| %d ",(*(tree+i))->value);
-	if((*(tree+i))->lchild!=NULL||(*(tree+i))->rchild!=NULL)
-	{
+	    if((*(tree+i))->lchild!=NULL||(*(tree+i))->rchild!=NULL)
+	    {
         	printf(" %d |",(*(tree+2*i))->value);
         	printf(" %d |",(*(tree+(2*i+1)))->value);
-	}
+	    }
         i++;
     }
     printf("\n");
