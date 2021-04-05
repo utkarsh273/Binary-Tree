@@ -4,7 +4,7 @@ void** DisplayTree(void **arg)
 {
     printf("%s:Begin\n",__FILE__);
     Node **tree;
-    int i;
+    int i,j;
     tree=(Node**)arg;
     i=1;   
     while(i<idx)
@@ -26,15 +26,20 @@ void** DisplayTree(void **arg)
         i++;
     }
     printf("\n");
-    i=1;
+    i=j=1;
     printf("| %d |",(*(tree+i))->value);
     while(i<idx)
     {
         //printf("| %d ",(*(tree+i))->value);
-	    if((*(tree+i))->lchild!=NULL||(*(tree+i))->rchild!=NULL)
+	    if((*(tree+i))->lchild!=NULL)
 	    {
         	printf(" %d |",(*(tree+2*i))->value);
-        	printf(" %d |",(*(tree+(2*i+1)))->value);
+            if((*(tree+j))->rchild!=NULL)
+            {
+                printf(" %d |",(*(tree+(2*j+1)))->value);
+                j++;
+            }
+        	
 	    }
         i++;
     }

@@ -24,7 +24,10 @@ int Init()
     fptr[4]=DeleteNode;
     fptr[5]=TraverseTree;
     fptr[6]=DisplayTree;
-    fptr[7]=allocateNode;
-    fptr[8]=FirstNode;
+    fptr[7]=DestroyTree;
+    fptr[8]=allocateNode;
+    fptr[9]=Preorder;
+    fptr[10]=Postorder;
+    fptr[11]=Inorder;
     return 0;
 }

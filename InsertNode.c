@@ -23,7 +23,7 @@ void** InsertNode(void **arg)
     }
     if(n==1)
     {
-        (*fptr[7])((void**)tree);//allocateNode
+        (*fptr[8])((void**)tree);//allocateNode
         *(tree+count)=*tree;
         printf("%s:value: %d\n",__func__,(*(tree+count))->value);
         printf("Count:%d\n",count);
@@ -36,7 +36,7 @@ void** InsertNode(void **arg)
         //if(!(*(tree+2*count))&& (*(tree+count))->lchild==NULL)
         if((*(tree+count))->lchild==NULL)
         {
-            (*fptr[7])((void**)tree);
+            (*fptr[8])((void**)tree);
             *(tree+2*count)=*tree;
             (*(tree+count))->lchild=*(tree+2*count);
             (*(tree+2*count))->parent=*(tree+count);
@@ -47,7 +47,7 @@ void** InsertNode(void **arg)
         //else if(!(*(tree+(2*count+1))) && (*(tree+count))->rchild==NULL)
         else if((*(tree+count))->rchild==NULL)
         {
-            (*fptr[7])((void**)tree);
+            (*fptr[8])((void**)tree);
             *(tree+(2*count+1))=*tree;
             (*(tree+count))->rchild=*(tree+(2*count+1));
             (*(tree+(2*count+1)))->parent=*(tree+count);

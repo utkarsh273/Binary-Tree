@@ -16,7 +16,7 @@ void** Mainmenu(void **arg)
         printf("3.DeleteNode\n");
         printf("4.TraverseTree\n");
         printf("5.DisplayTree\n");
-        printf("6.DistroyTree\n");
+        printf("6.DestroyTree\n");
     }
     printf("0.Exit\n"); 
     printf("Enter your choice\n");
