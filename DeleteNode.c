@@ -3,7 +3,7 @@
 void** DeleteNode(void **arg)
 {
     printf("%s:Begin\n",__FILE__);
-    int i,key,loc;
+    int i,key,loc,lockey;
     Node **tree;
     Node *Tree;
     tree=(Node**)arg;
@@ -17,9 +17,15 @@ void** DeleteNode(void **arg)
         i++;
     }
     i=1;
-    while((*(tree+i++))->value!=key);
-    (*(tree+i))->value=Tree->value;
+    while((*(tree+i))->value!=key)
+    {
+        lockey=i;
+        i++;
+    }
+    (*(tree+lockey+1))->value=Tree->value;
     free((*(tree+loc))->rchild);
+    (*(tree+loc))->rchild=NULL;
+    printf("new lchild of %d :%d and Rchild:%d\n",(*(tree+lockey+1))->parent->value,(*(tree+lockey+1))->parent->lchild->value,(*(tree+lockey+1))->parent->rchild->value);
     printf("%s:End\n",__FILE__);
     return (void**)tree;
 }
